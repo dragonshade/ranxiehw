@@ -40,6 +40,13 @@ class RPNCalculator
 		end
 	end
 
+	#idea is simple, create a new stack,
+	#keep pop stuff onto the new stack
+	#if an op followed by two numbers are found, compute it
+	#and use the new stack as the new command Queue
+	#until the Queue converge to a single result
+	#Or the top of the Queue is not an operation
+	#Then return intermediate result (top of the Queue)
 	def value
 		while ["+","-","*","/"].include?(@cmdQ.last)
 			stack=[]
